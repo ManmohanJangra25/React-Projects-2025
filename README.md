@@ -2,6 +2,19 @@
 
 Welcome to the ultimate collection of React projects designed to help you master the basics, dive into advanced concepts, and build a portfolio that stands out in job applications—especially for MAANG-level companies! 🎯
 
+---
+
+## 📂 Branch Structure
+
+Each project in this repository is organized into its **respective branch**. Simply switch to the branch corresponding to the project you want to explore or work on. This keeps the codebase clean and makes navigation easier. 🚀
+
+Example:
+
+- `beginner-todo-list` for the **To-Do List with State Management** project.
+- `advanced-social-media-dashboard` for the **Social Media Dashboard** project.
+
+---
+
 ## 🌟 Project Categories
 
 ### Beginner to Intermediate Projects
