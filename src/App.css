@@ -1,1 +1,62 @@
+.main{
+    background-color: var(---secondary_font_color);
+    padding: 40px;
+    /* height: 100vh; This needs to be animated*/
+    overflow: hidden;
+    transition: all 1s ease-in-out;
+}
 
+.main_body{
+    border-radius: 25px;
+    background-color: var(---main_background_color);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    height: calc(100vh - 80px);
+}
+
+.left_content{
+    height: 100%;
+}
+
+.left_body{
+    width: 70%;
+    height: calc(100vh - 80px);
+}
+
+.left_inner_content{
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    height: 100%;
+}
+
+.right_body{
+    width: 25%;
+    background-color: var(---light_grey_color);
+    border-radius: 0 25px 25px 0;
+    height: calc(100vh - 80px);
+}
+
+.right_body .right_inner_content{
+    height: 100%;
+}
+
+.right_body .right_inner_content .main_weather_box{
+    margin-top: 30%;
+    margin-bottom: 30%;
+}
+.right_body .right_inner_content .main_weather_box .main_temp{
+    margin-bottom: 20px;
+}
+.right_body .right_inner_content .main_weather_box .weather_feel{
+    margin-bottom: 20px;
+}
+
+.right_body{
+    text-align: center;
+}
+
+.right_body .app_time{
+    font-size: 25px;
+}

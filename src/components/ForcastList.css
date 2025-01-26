@@ -1,0 +1,66 @@
+.left_body .weather_list{
+    width: 70%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.left_body .weather_list .weather_list_item{
+    border: 1px solid transparent;
+    border-radius: 15px;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 15px;
+    cursor: pointer;
+    transition: all 0.2s ease-in;
+}
+
+.left_body .weather_list .weather_list_item.active, .left_body .weather_list .weather_list_item:hover{
+    border: 1px solid var(---secondary_font_color);
+}
+
+.left_body .weather_list .weather_list_item .weather_list_date, .right_body .weather_list .weather_list_date{
+    font-size: 15px;
+    line-height: 1;
+    color: var(---main_font_color);
+    font-weight: 500;
+}
+
+.left_body .weather_list .weather_list_item .weather_list_temp, .right_body .weather_list .weather_list_temp{
+    font-size: 25px;
+    line-height: 1;
+    color: var(---main_font_color);
+    font-weight: 500;
+    opacity: 0.8;
+}
+
+.left_body .weather_list .weather_list_item .weather_list_type, .right_body .weather_list .weather_list_type{
+    font-size: 15px;
+    line-height: 1;
+    color: var(---secondary_font_color);
+}
+
+.right_body .weather_list{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 15px;
+    padding: 25px;
+}
+
+.right_body .weather_list .weather_list_item{
+    border: 1px solid var(---secondary_font_color);
+    border-radius: 15px;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 15px;
+    cursor: pointer;
+    transition: all 0.2s ease-in;
+}

@@ -1,0 +1,17 @@
+.header{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 25px;
+}
+
+.app_name, .app_date{
+    font-size: 25px;
+    font-weight: 600;
+    color: var(---main_font_color);
+}
+.app_greeting{
+    font-size: 30px;
+    font-weight: 600;
+    color: var(---main_font_color);
+}

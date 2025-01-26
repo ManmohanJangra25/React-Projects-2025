@@ -1,13 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: "Roboto", serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+/* code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+} */
+
+.main[data-theme="Sunny"] {
+  ---main_background_color: #ffeba1;
+  ---main_font_color: #5a3e00;
+  ---secondary_font_color: #7d5601;
+  ---light_grey_color: #ffd68a;
+}
+.main[data-theme="Cloudy"] {
+  ---main_background_color: #fafafa;
+  ---main_font_color: #3e3e3e;
+  ---secondary_font_color: #c7c7c7;
+  ---light_grey_color: #f6f6f6;
+  /* ---main_background_color: #D3D3D3 (Light grey)
+  ---main_font_color: #3E3E3E (Dark grey, same as current)
+  ---secondary_font_color: #A9A9A9 (Darker grey)
+  ---light_grey_color: #C0C0C0 (Muted grey) */
+}
+.main[data-theme="Rainy"] {
+  ---main_background_color: #a2c4ff;
+  ---main_font_color: #1b2838;
+  ---secondary_font_color: #608bbf;
+  ---light_grey_color: #e6eef9;
+}
+.main[data-theme="Mist"],
+.main[data-theme="Fog"] {
+  ---main_background_color: #e5e5e5;
+  ---main_font_color: #6b6b6b;
+  ---secondary_font_color: #a3a3a3;
+  ---light_grey_color: #d9d9d9;
+}
+.main[data-theme="Snowy"] {
+  ---main_background_color: #ffffff;
+  ---main_font_color: #3e3e3e;
+  ---secondary_font_color: #b3b3b3;
+  ---light_grey_color: #e6e6e6;
+}
+.main[data-theme="Stormy"] {
+  ---main_background_color: #5c5c6e;
+  ---main_font_color: #ffffff;
+  ---secondary_font_color: #8a8aa6;
+  ---light_grey_color: #a1a1b8;
+}
+.main[data-theme="Night"] {
+  ---main_background_color: #2c3e50;
+  ---main_font_color: #ecf0f1;
+  ---secondary_font_color: #7f8c8d;
+  ---light_grey_color: #34495e;
+}
+
+a,p,h1,h2,h3,h4,h5,h6{
+  margin: 0;
+  color: var(---main_font_color);
 }
