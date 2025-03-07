@@ -4,16 +4,19 @@ import FilterBar from "./components/filters/FilterBar";
 import HeroSlider from "./components/heroSlider/HeroSlider";
 import MovieBox from "./components/movie_box/MovieBox";
 import { fetchData } from "./components/store/fetchData";
+import { AiOutlineLoading } from "react-icons/ai";
 
 function App() {
   const [apiData, setApiData] = useState([]);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
+  const [gener, setGener] = useState("now_playing");
+
   useEffect(() => {
     const fetchMovieData = async () => {
       try {
-        const data = await fetchData("now_playing");
+        const data = await fetchData(gener);
         setApiData(data);
-        setLoading(true);
+        setLoading(false);
       } catch (err) {
         console.log(err);
         setLoading(false);
@@ -21,7 +24,7 @@ function App() {
     };
 
     fetchMovieData();
-  }, []);
+  }, [gener]);
 
   return (
     <>
@@ -29,7 +32,7 @@ function App() {
       {/* <!-- end header --> */}
 
       {/* <!-- home --> */}
-      {!loading ? <p style={{ color: "white" }}>LOADING</p> : <HeroSlider />}
+      <HeroSlider />
       {/* <!-- end home --> */}
 
       {/* <!-- catalog --> */}
@@ -40,58 +43,22 @@ function App() {
               <FilterBar />
 
               <div className="row row--grid">
-                <div className="col-6 col-sm-4 col-lg-3 col-xl-2">
-                  {!loading ? (
-                    <p style={{ color: "white" }}>LOADING</p>
-                  ) : (
-                    <MovieBox />
-                  )}
-                </div>
-                {/* <div className="col-6 col-sm-4 col-lg-3 col-xl-2">
-                  <MovieBox />
-                </div>
-                <div className="col-6 col-sm-4 col-lg-3 col-xl-2">
-                  <MovieBox />
-                </div>
-                <div className="col-6 col-sm-4 col-lg-3 col-xl-2">
-                  <MovieBox />
-                </div>
-                <div className="col-6 col-sm-4 col-lg-3 col-xl-2">
-                  <MovieBox />
-                </div>
-                <div className="col-6 col-sm-4 col-lg-3 col-xl-2">
-                  <MovieBox />
-                </div>
-                <div className="col-6 col-sm-4 col-lg-3 col-xl-2">
-                  <MovieBox />
-                </div>
-                <div className="col-6 col-sm-4 col-lg-3 col-xl-2">
-                  <MovieBox />
-                </div>
-                <div className="col-6 col-sm-4 col-lg-3 col-xl-2">
-                  <MovieBox />
-                </div>
-                <div className="col-6 col-sm-4 col-lg-3 col-xl-2">
-                  <MovieBox />
-                </div>
-                <div className="col-6 col-sm-4 col-lg-3 col-xl-2">
-                  <MovieBox />
-                </div>
-                <div className="col-6 col-sm-4 col-lg-3 col-xl-2">
-                  <MovieBox />
-                </div>
-                <div className="col-6 col-sm-4 col-lg-3 col-xl-2">
-                  <MovieBox />
-                </div>
-                <div className="col-6 col-sm-4 col-lg-3 col-xl-2">
-                  <MovieBox />
-                </div>
-                <div className="col-6 col-sm-4 col-lg-3 col-xl-2">
-                  <MovieBox />
-                </div>
-                <div className="col-6 col-sm-4 col-lg-3 col-xl-2">
-                  <MovieBox />
-                </div> */}
+                {loading ? (
+                  <span className="center_icon loading_animation">
+                    <AiOutlineLoading />
+                  </span>
+                ) : (
+                  apiData.results.map((movieData) => {
+                    return (
+                      <div
+                        className="col-6 col-sm-4 col-lg-3 col-xl-2"
+                        key={movieData.id}
+                      >
+                        <MovieBox data={movieData} />
+                      </div>
+                    );
+                  })
+                )}
               </div>
             </div>
           </div>
@@ -121,21 +88,13 @@ function App() {
                   className="section__carousel owl-carousel"
                   id="subscriptions"
                 >
-                  <MovieBox />
-
-                  <MovieBox />
-
-                  <MovieBox />
-
-                  <MovieBox />
-
-                  <MovieBox />
-
-                  <MovieBox />
-                  <MovieBox />
-                  <MovieBox />
-                  <MovieBox />
-                  <MovieBox />
+                  {/* {loading ? (
+                    <p style={{ color: "white" }}>LOADING</p>
+                  ) : (
+                    apiData.results.map((movieData) => {
+                      return <MovieBox key={movieData.id} data={movieData} />;
+                    })
+                  )} */}
                 </div>
 
                 <button

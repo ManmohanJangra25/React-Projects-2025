@@ -1,1 +1,23 @@
 
+.center_icon{
+    width: 100%;
+    margin-top: 50px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loading_animation svg{
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+.loading_animation svg{
+    fill: #ffffff;
+    stroke: #ffffff;
+}

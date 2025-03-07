@@ -1,12 +1,11 @@
 import App from "../../App";
 import { createBrowserRouter } from "react-router-dom";
-import Root, { authorizeAPI } from "./Root";
+import Root from "./Root";
 
 export const router = createBrowserRouter([
   {
     path: "/",
     element: <Root />,
-    loader: authorizeAPI,
     children: [
       {
         path: "/",

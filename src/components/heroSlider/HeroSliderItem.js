@@ -1,6 +1,6 @@
 const HeroSliderItem = () => {
   return (
-    <div className="home__card">
+    <div className="home__card item">
       <a href="details.html">
         <img src="./assets/img/home/1.jpg" alt="" />
       </a>
